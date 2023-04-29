@@ -139,7 +139,7 @@ const Navbar = () => {
                       Github repository
                       <a
                         className="mr-5"
-                        href="https://github.com/husseinjfr/Book-Store.git"
+                        href="https://github.com/husseinjfr?tab=repositories"
                         target="_"
                       >
                         press
