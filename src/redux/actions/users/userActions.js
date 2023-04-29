@@ -19,9 +19,9 @@ import {
   FETCH_USERS_SUCCESS,
 } from "../actionTypes";
 
-const ROOT_URL =
-  "https://book-store-backend-q9ak.onrender.com" || "http://localhost:8080";
-axios.defaults.baseURL = ROOT_URL;
+// const ROOT_URL =
+//   "https://book-store-backend-q9ak.onrender.com" || "http://localhost:8080";
+// axios.defaults.baseURL = ROOT_URL;
 
 export const registerUser = (name, email, password) => {
   return async (dispatch) => {
@@ -75,7 +75,7 @@ export const loginUser = (email, password) => {
         },
       };
       const { data } = await axios.post(
-        "https://book-store-backend-q9ak.onrender.com/api/users/login",
+        "/api/users/login",
         { email, password },
         config
       );
@@ -89,7 +89,10 @@ export const loginUser = (email, password) => {
     } catch (error) {
       dispatch({
         type: USER_LOGIN_FAIL,
-        payload: error.response.data.message,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
       });
     }
   };
