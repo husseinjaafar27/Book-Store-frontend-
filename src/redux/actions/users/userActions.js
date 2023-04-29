@@ -19,6 +19,10 @@ import {
   FETCH_USERS_SUCCESS,
 } from "../actionTypes";
 
+const ROOT_URL =
+  "https://book-store-backend-q9ak.onrender.com" || "http://localhost:8080";
+axios.defaults.baseURL = ROOT_URL;
+
 export const registerUser = (name, email, password) => {
   return async (dispatch) => {
     try {
