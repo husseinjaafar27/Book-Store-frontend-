@@ -75,7 +75,7 @@ export const loginUser = (email, password) => {
         },
       };
       const { data } = await axios.post(
-        "/api/users/login",
+        "https://book-store-backend-q9ak.onrender.com/api/users/login",
         { email, password },
         config
       );
