@@ -33,7 +33,7 @@ export const createBook = (category, author, title) => {
         },
       };
       const { data } = await axios.post(
-        "/api/books",
+        "https://book-store-backend-q9ak.onrender.com/api/books",
         { category, author, title },
         config
       );
@@ -66,7 +66,7 @@ export const fetchBooks = () => {
           "Content-Type": "application/json",
         },
       };
-      const { data } = await axios.get("/api/books", config);
+      const { data } = await axios.get("https://book-store-backend-q9ak.onrender.com/api/books", config);
 
       dispatch({
         type: FETCH_BOOK_SUCCESS,
@@ -94,7 +94,7 @@ export const deleteBook = (id) => {
           "Content-Type": "application/json",
         },
       };
-      const { data } = await axios.delete(`/api/books/delete/${id}`, config);
+      const { data } = await axios.delete(`https://book-store-backend-q9ak.onrender.com/api/books/delete/${id}`, config);
       dispatch({
         type: DELETE_BOOK_SUCCESS,
         payload: data,
@@ -126,7 +126,7 @@ export const fetchBook = (id, bookData) => {
           "Content-Type": "application/json",
         },
       };
-      const { data } = await axios.get(`/api/books/${id}`, bookData, config);
+      const { data } = await axios.get(`https://book-store-backend-q9ak.onrender.com/api/books/${id}`, bookData, config);
 
       dispatch({
         type: BOOK_DETAIL_SUCCESS,
@@ -155,7 +155,7 @@ export const updateBook = (id, bookData) => {
         },
       };
       const { data } = await axios.patch(
-        `/api/books/update/${id}`,
+        `https://book-store-backend-q9ak.onrender.com/api/books/update/${id}`,
         bookData,
         config
       );
