@@ -121,7 +121,7 @@ export const getUserProfile = () => {
           authorization: `Bearer ${userInfo.token}`,
         },
       };
-      const { data } = await axios.get("/api/users/profile", config);
+      const { data } = await axios.get("https://book-store-backend-q9ak.onrender.com/api/users/profile", config);
       dispatch({
         type: USER_PROFILE_SUCCESS,
         payload: data,
@@ -151,7 +151,7 @@ export const updateUser = (name, email, password) => {
         },
       };
       const { data } = await axios.put(
-        "/api/users/profile/update",
+        "https://book-store-backend-q9ak.onrender.com/api/users/profile/update",
         { name, email, password },
         config
       );
@@ -183,7 +183,7 @@ export const fetchUsers = () => {
           "Content-Type": "application/json",
         },
       };
-      const { data } = await axios.get("/api/users", config);
+      const { data } = await axios.get("https://book-store-backend-q9ak.onrender.com/api/users", config);
       dispatch({
         type: FETCH_USERS_SUCCESS,
         payload: data,
